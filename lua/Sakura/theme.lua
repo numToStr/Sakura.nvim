@@ -25,7 +25,7 @@ end
 
 function sakura:setup(cfg)
     if cfg ~= nil then
-        self.config = vim.tbl_extend('keep', self.config, cfg)
+        self.config = vim.tbl_extend('force', self.config, cfg)
     end
 
     return self
