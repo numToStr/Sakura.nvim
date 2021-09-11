@@ -1,19 +1,17 @@
 local sakura = require('Sakura.theme')
 
-local m = {}
+local S = {}
 
 ---Configure the theme and palette
-function m.setup(...)
-    sakura:setup(...)
-end
+S.setup = sakura.setup
 
 ---Load the theme
-function m.bloom()
+function S.bloom()
     -- bloom() returns the currently used color palette which we can expose to the users
-    local palette = sakura:bloom()
+    local palette = sakura.bloom()
 
     -- To be used outside e.g lualine
-    m.palette = palette
+    S.palette = palette
 end
 
-return m
+return S

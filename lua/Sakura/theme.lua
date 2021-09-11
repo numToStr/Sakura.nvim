@@ -3,39 +3,32 @@ local defs = require('Sakura.defs')
 local u = require('Sakura.utils')
 local o = vim.o
 
-local sakura = {}
+local S = {
+    -- Name of the theme
+    name = 'sakura',
+    config = {
+        -- Variant of the theme: rose (default [dark]) | moon [dim] | dawn [light]
+        variant = o.background == 'dark' and 'rose' or 'dawn',
+        -- Transparent background
+        transparent = false,
+        -- Use italics
+        italics = true,
+    },
+}
 
-function sakura:new()
-    local state = {
-        -- Name of the theme
-        name = 'sakura',
-        config = {
-            -- Variant of the theme: rose (default [dark]) | moon [dim] | dawn [light]
-            variant = o.background == 'dark' and 'rose' or 'dawn',
-            -- Transparent background
-            transparent = false,
-            -- Use italics
-            italics = true,
-        },
-    }
-
-    self.__index = self
-    return setmetatable(state, self)
-end
-
-function sakura:setup(cfg)
+function S.setup(cfg)
     if cfg ~= nil then
-        self.config = vim.tbl_extend('force', self.config, cfg)
+        S.config = vim.tbl_extend('force', S.config, cfg)
     end
 
-    return self
+    return S
 end
 
-function sakura:bloom()
-    vim.g.colors_name = self.name
+function S.bloom()
+    vim.g.colors_name = S.name
     o.termguicolors = true
 
-    local cfg = self.config
+    local cfg = S.config
 
     -- If the user sets `dawn` variant and doesn't have a light background then change it
     if o.background ~= 'light' and cfg.variant == 'dawn' then
@@ -63,4 +56,4 @@ function sakura:bloom()
     return plt
 end
 
-return sakura:new()
+return S
