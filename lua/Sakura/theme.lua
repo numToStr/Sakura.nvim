@@ -1,5 +1,6 @@
 local palette = require('Sakura.palette')
-local highlights = require('Sakura.highlights')
+local defs = require('Sakura.defs')
+local u = require('Sakura.utils')
 local o = vim.o
 
 local sakura = {}
@@ -43,21 +44,21 @@ function sakura:bloom()
 
     local plt = palette.get(cfg.variant)
 
-    local theme = highlights.groups(plt, cfg)
+    local theme = defs.groups(plt, cfg)
 
     for group, colors in pairs(theme.base) do
-        highlights.hi(group, colors)
+        u.hi(group, colors)
     end
 
     for group, colors in pairs(theme.treesitter) do
-        highlights.hi(group, colors)
+        u.hi(group, colors)
     end
 
     for group, colors in pairs(theme.plugins) do
-        highlights.hi(group, colors)
+        u.hi(group, colors)
     end
 
-    highlights.load_terminal(plt)
+    defs.load_terminal(plt)
 
     return plt
 end

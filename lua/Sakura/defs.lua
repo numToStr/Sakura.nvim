@@ -1,20 +1,6 @@
-local cmd = vim.api.nvim_command
-local highlights = {}
+local M = {}
 
-function highlights.hi(group, styles)
-    local gui = styles.gui or 'NONE'
-    local sp = styles.sp or 'NONE'
-    local fg = styles.fg or 'NONE'
-    local bg = styles.bg or 'NONE'
-
-    cmd('highlight! ' .. group .. ' gui=' .. gui .. ' guisp=' .. sp .. ' guifg=' .. fg .. ' guibg=' .. bg)
-
-    if styles.link then
-        cmd('highlight! link ' .. group .. ' ' .. styles.link)
-    end
-end
-
-function highlights.groups(palette, cfg)
+function M.groups(palette, cfg)
     local theme = {}
 
     local maybe_base = cfg.transparent and palette.none or palette.base
@@ -295,7 +281,7 @@ function highlights.groups(palette, cfg)
     return theme
 end
 
-function highlights.load_terminal(palette)
+function M.load_terminal(palette)
     -- black
     vim.g.terminal_color_0 = palette.overlay
     vim.g.terminal_color_8 = palette.subtle
@@ -322,4 +308,4 @@ function highlights.load_terminal(palette)
     vim.g.terminal_color_15 = palette.text
 end
 
-return highlights
+return M
