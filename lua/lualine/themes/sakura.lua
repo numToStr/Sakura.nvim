@@ -1,4 +1,4 @@
-local p = require('Sakura').palette
+local p = require('Sakura').Palette
 
 return {
     normal = {

@@ -11,7 +11,7 @@ function S.bloom()
     local palette = sakura.bloom()
 
     -- To be used outside e.g lualine
-    S.palette = palette
+    S.Palette = palette
 end
 
 return S
