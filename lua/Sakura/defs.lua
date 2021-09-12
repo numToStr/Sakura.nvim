@@ -256,7 +256,7 @@ function M.groups(p, cfg)
         NvimTreeOpenedFolderName = { fg = p.foam },
         NvimTreeRootFolder = { fg = p.subtle },
         NvimTreeSpecialFile = { link = 'NvimTreeNormal' },
-        NvimTreeIndentMarker = { fg = p.inactive },
+        NvimTreeIndentMarker = { fg = p.overlay },
 
         NvimTreeGitDeleted = { fg = p.love },
         NvimTreeGitDirty = { fg = p.rose },
