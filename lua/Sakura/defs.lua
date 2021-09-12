@@ -187,6 +187,11 @@ function M.groups(palette, cfg)
         -- TSUnderline = {},
         TSVariable = { fg = palette.text, gui = maybe_italic },
         TSVariableBuiltin = { fg = palette.love },
+
+        -- nvim-treesitter-refactor
+        TSDefinition = { bg = palette.highlight_overlay },
+        TSDefinitionUsage = { bg = palette.highlight_overlay },
+        TSCurrentScope = { bg = palette.inactive },
     }
 
     theme.plugins = {
