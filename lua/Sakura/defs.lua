@@ -140,7 +140,7 @@ function M.groups(p, cfg)
         -- TSAttribute = {},
         TSBoolean = { fg = p.rose },
         -- TSCharacter = {},
-        TSComment = { fg = p.subtle, gui = maybe_italic },
+        TSComment = { link = 'Comment' },
         -- TSConditional = {},
         TSConstBuiltin = { fg = p.love },
         -- TSConstMacro = {},
@@ -192,6 +192,11 @@ function M.groups(p, cfg)
         TSDefinition = { bg = p.highlight_overlay },
         TSDefinitionUsage = { bg = p.highlight_overlay },
         TSCurrentScope = { bg = p.inactive },
+
+        -- rust
+        rustTSField = { fg = p.rose },
+        rustTSType = { fg = p.foam },
+        rustTSTypeBuiltin = { fg = p.love },
     }
 
     theme.plugins = {
