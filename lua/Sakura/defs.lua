@@ -285,7 +285,7 @@ function M.groups(p, cfg)
 
         -- indent-blankline.nvim
         -- https://github.com/lukas-reineke/indent-blankline.nvim
-        IndentBlanklineChar = { fg = p.inactive },
+        IndentBlanklineChar = { fg = p.overlay },
     }
 
     return theme
