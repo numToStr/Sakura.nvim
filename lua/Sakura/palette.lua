@@ -30,7 +30,7 @@ function palette.get(variant)
             inactive = '#59546d',
             subtle = '#817c9c',
             text = '#e0def4',
-            love = '#eb6f92',
+            love = '#FF789E',
             gold = '#f6c177',
             rose = '#ea9a97',
             pine = '#3e8fb0',
@@ -44,13 +44,13 @@ function palette.get(variant)
     end
 
     return {
-        base = '#191724',
+        base = '#141421',
         surface = '#1f1d2e',
         overlay = '#26233a',
         inactive = '#555169',
         subtle = '#6e6a86',
         text = '#e0def4',
-        love = '#eb6f92',
+        love = '#FF789E',
         gold = '#f6c177',
         rose = '#ebbcba',
         pine = '#31748f',
