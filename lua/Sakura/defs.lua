@@ -197,6 +197,7 @@ function M.groups(p, cfg)
         rustTSField = { fg = p.rose },
         rustTSType = { fg = p.foam },
         rustTSTypeBuiltin = { fg = p.love },
+        rustTSFuncMacro = { fg = p.rose },
     }
 
     theme.plugins = {
