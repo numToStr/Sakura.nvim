@@ -16,10 +16,6 @@ function M.groups(p, cfg)
         CursorLineNr = { fg = p.subtle },
         DarkenedPanel = { bg = p.surface },
         DarkenedStatusline = { bg = p.surface },
-        DiffAdd = { fg = p.foam },
-        DiffChange = { fg = p.rose },
-        DiffDelete = { fg = p.love },
-        DiffText = { fg = p.text },
         Directory = { fg = p.foam, bg = p.none },
         EndOfBuffer = { fg = p.base },
         ErrorMsg = { fg = p.love, gui = 'bold' },
@@ -133,6 +129,20 @@ function M.groups(p, cfg)
         LspReferenceText = { fg = p.rose, bg = p.highlight },
         LspReferenceRead = { fg = p.rose, bg = p.highlight },
         LspReferenceWrite = { fg = p.rose, bg = p.highlight },
+
+        DiffAdd = { fg = p.foam },
+        DiffChange = { fg = p.rose },
+        DiffDelete = { fg = p.love },
+        DiffText = { fg = p.text },
+        diffFile = { fg = p.subtle }, -- diff command on top
+        diffIndexLine = { fg = p.inactive }, -- commit index below the diff command
+        diffAdded = { link = 'DiffAdd' }, -- for added lines
+        diffRemoved = { link = 'DiffDelete' }, -- for removed lines
+        diffChanged = { link = 'DiffChange' }, -- IDK, maybe for changed lines
+        diffNewFile = { link = 'DiffAdd' }, -- file with `+++ marker
+        diffOldFile = { link = 'DiffDelete' }, -- file with `---` marker
+        diffLine = { fg = p.inactive }, -- loc summary
+        diffSubname = { fg = p.gold }, -- context after loc summary
     }
 
     theme.treesitter = {
