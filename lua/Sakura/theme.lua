@@ -7,8 +7,8 @@ local S = {
     -- Name of the theme
     name = 'sakura',
     config = {
-        -- Variant of the theme: rose (default [dark]) | moon [dim] | dawn [light]
-        variant = o.background == 'dark' and 'rose' or 'dawn',
+        -- Variant of the theme: moon [dark] | dawn [light]
+        variant = o.background == 'dark' and 'moon' or 'dawn',
         -- Transparent background
         transparent = false,
         -- Use italics
