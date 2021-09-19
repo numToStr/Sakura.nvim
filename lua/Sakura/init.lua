@@ -7,11 +7,8 @@ S.setup = sakura.setup
 
 ---Bootstrap the colorscheme
 function S.bloom()
-    -- bloom() returns the currently used color palette which we can expose to the users
-    local palette = sakura.bloom()
-
-    -- To be used outside e.g lualine
-    S.Palette = palette
+    -- bloom() returns the currently used color palette which we can expose to the users for outside usage e.g lualine
+    S.Palette = sakura.bloom()
 end
 
 ---Load the colorscheme
