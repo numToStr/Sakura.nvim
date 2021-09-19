@@ -94,13 +94,6 @@ function M.groups(p, cfg)
         Typedef = { fg = p.foam },
         Underlined = { fg = p.foam, gui = 'underline' },
 
-        htmlArg = { fg = p.iris },
-        htmlEndTag = { fg = p.subtle },
-        htmlLink = { fg = p.text },
-        htmlTag = { fg = p.subtle },
-        htmlTagN = { fg = p.love },
-        htmlTagName = { fg = p.foam },
-
         LspDiagnosticsDefaultHint = { fg = p.iris },
         LspDiagnosticsDefaultInformation = { fg = p.foam },
         LspDiagnosticsDefaultWarning = { fg = p.gold },
@@ -130,6 +123,7 @@ function M.groups(p, cfg)
         LspReferenceRead = { fg = p.rose, bg = p.highlight },
         LspReferenceWrite = { fg = p.rose, bg = p.highlight },
 
+        -- # Diff/diff
         DiffAdd = { fg = p.foam },
         DiffChange = { fg = p.rose },
         DiffDelete = { fg = p.love },
@@ -143,6 +137,33 @@ function M.groups(p, cfg)
         diffOldFile = { link = 'DiffDelete' }, -- file with `---` marker
         diffLine = { fg = p.inactive }, -- loc summary
         diffSubname = { fg = p.gold }, -- context after loc summary
+
+        -- # HTML
+        htmlArg = { fg = p.iris },
+        htmlEndTag = { fg = p.subtle },
+        htmlLink = { fg = p.text },
+        htmlTag = { fg = p.subtle },
+        htmlTagN = { fg = p.love },
+        htmlTagName = { fg = p.foam },
+        htmlH1 = { fg = p.rose },
+
+        -- # markdown
+        markdownH1 = { fg = p.love, gui = 'bold' },
+        markdownH2 = { fg = p.rose, gui = 'bold' },
+        markdownH3 = { fg = p.gold, gui = 'bold' },
+        markdownH4 = { fg = p.foam, gui = 'bold' },
+        markdownH5 = { fg = p.iris, gui = 'bold' },
+        markdownH6 = { fg = p.pine, gui = 'bold' },
+        markdownHeadingDelimiter = { fg = p.subtle, gui = 'bold' },
+        markdownLinkText = { fg = p.iris },
+        markdownLinkTextDelimiter = { link = 'Comment' },
+        markdownUrl = { fg = p.pine },
+        markdownLink = { link = 'markdownUrl' },
+        markdownLinkDelimiter = { link = 'Comment' },
+        markdownCode = { fg = p.rose },
+        markdownCodeDelimiter = { fg = p.foam },
+        markdownListMarker = { fg = p.love, gui = 'bold' },
+        markdownOrderedListMarker = { link = 'markdownListMarker' },
     }
 
     theme.treesitter = {
