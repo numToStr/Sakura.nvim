@@ -56,4 +56,8 @@ function S.bloom()
     return plt
 end
 
+function S.load()
+    vim.api.nvim_command('colorscheme ' .. S.name)
+end
+
 return S
