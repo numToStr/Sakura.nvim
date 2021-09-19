@@ -164,6 +164,12 @@ function M.groups(p, cfg)
         markdownCodeDelimiter = { fg = p.foam },
         markdownListMarker = { fg = p.love, gui = 'bold' },
         markdownOrderedListMarker = { link = 'markdownListMarker' },
+
+        -- xml
+        xmlTag = { fg = p.subtle },
+        xmlTagName = { fg = p.rose },
+        xmlAttrib = { fg = p.foam },
+        xmlString = { fg = p.gold },
     }
 
     theme.treesitter = {
