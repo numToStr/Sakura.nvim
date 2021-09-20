@@ -294,6 +294,7 @@ function M.groups(p, cfg)
         NvimTreeRootFolder = { fg = p.subtle },
         NvimTreeSpecialFile = { link = 'NvimTreeNormal' },
         NvimTreeIndentMarker = { fg = p.overlay },
+        NvimTreeWindowPicker = { fg = p.base, bg = p.iris },
 
         NvimTreeGitDeleted = { fg = p.love },
         NvimTreeGitDirty = { fg = p.rose },
@@ -302,8 +303,6 @@ function M.groups(p, cfg)
         NvimTreeGitNew = { fg = p.foam },
         NvimTreeGitRenamed = { fg = p.pine },
         NvimTreeGitStaged = { fg = p.iris },
-
-        NvimTreeWindowPicker = { fg = p.base, bg = p.iris },
 
         -- which-key.nvim
         -- https://github.com/folke/which-key.nvim
