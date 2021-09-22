@@ -7,7 +7,20 @@ function M.hi(group, styles)
     local fg = styles.fg or 'NONE'
     local bg = styles.bg or 'NONE'
 
-    cmd('highlight! ' .. group .. ' gui=' .. gui .. ' guisp=' .. sp .. ' guifg=' .. fg .. ' guibg=' .. bg)
+    cmd(
+        'highlight! '
+            .. group
+            .. ' gui='
+            .. gui
+            .. ' guisp='
+            .. sp
+            .. ' guifg='
+            .. fg
+            .. ' guibg='
+            .. bg
+            .. ' cterm='
+            .. gui
+    )
 
     if styles.link then
         cmd('highlight! link ' .. group .. ' ' .. styles.link)
