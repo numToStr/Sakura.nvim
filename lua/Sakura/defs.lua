@@ -92,7 +92,7 @@ function M.groups(p, cfg)
         Todo = { fg = p.iris },
         Type = { fg = p.foam },
         Typedef = { fg = p.foam },
-        Underlined = { fg = p.foam, gui = 'underline' },
+        Underlined = { fg = p.foam, gui = 'undercurl' },
 
         -- # Diff/diff
         DiffAdd = { fg = p.foam },
@@ -224,10 +224,10 @@ function M.groups(p, cfg)
         DiagnosticInfo = { fg = p.foam },
         DiagnosticHint = { fg = p.iris },
 
-        DiagnosticUnderlineError = { fg = p.love, gui = 'underline' },
-        DiagnosticUnderlineWarn = { fg = p.gold, gui = 'underline' },
-        DiagnosticUnderlineInfo = { fg = p.foam, gui = 'underline' },
-        DiagnosticUnderlineHint = { fg = p.iris, gui = 'underline' },
+        DiagnosticUnderlineError = { sp = p.love, gui = 'undercurl' },
+        DiagnosticUnderlineWarn = { sp = p.gold, gui = 'undercurl' },
+        DiagnosticUnderlineInfo = { sp = p.foam, gui = 'undercurl' },
+        DiagnosticUnderlineHint = { sp = p.iris, gui = 'undercurl' },
 
         -- old api (0.5)
         LspDiagnosticsDefaultHint = { fg = p.iris },
@@ -330,10 +330,13 @@ function M.groups(p, cfg)
 
         -- coc.nvim
         CocErrorSign = { link = 'DiagnosticError' },
+        CocErrorHighlight = { link = 'DiagnosticUnderlineError' },
         CocWarningSign = { link = 'DiagnosticWarn' },
+        CocWarningHighlight = { link = 'DiagnosticUnderlineWarn' },
         CocInfoSign = { link = 'DiagnosticInfo' },
+        CocInfoHighlight = { link = 'DiagnosticUnderlineInfo' },
         CocHintSign = { link = 'DiagnosticHint' },
-        CocStrikeThrough = { gui = 'underline' },
+        CocHintHighlight = { link = 'DiagnosticUnderlineHint' },
     }
 
     return theme
