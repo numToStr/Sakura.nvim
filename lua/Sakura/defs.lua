@@ -235,6 +235,9 @@ function M.groups(p, cfg)
         rustTSType = { fg = p.foam },
         rustTSTypeBuiltin = { fg = p.love },
         rustTSFuncMacro = { fg = p.rose },
+
+        -- graphql
+        graphqlTSParameter = { fg = p.rose },
     }
 
     theme.plugins = {
