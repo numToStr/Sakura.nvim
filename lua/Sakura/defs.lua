@@ -327,6 +327,13 @@ function M.groups(p, cfg)
         -- indent-blankline.nvim
         -- https://github.com/lukas-reineke/indent-blankline.nvim
         IndentBlanklineChar = { fg = p.overlay },
+
+        -- coc.nvim
+        CocErrorSign = { link = 'DiagnosticError' },
+        CocWarningSign = { link = 'DiagnosticWarn' },
+        CocInfoSign = { link = 'DiagnosticInfo' },
+        CocHintSign = { link = 'DiagnosticHint' },
+        CocStrikeThrough = { gui = 'underline' },
     }
 
     return theme
