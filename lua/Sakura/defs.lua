@@ -94,35 +94,6 @@ function M.groups(p, cfg)
         Typedef = { fg = p.foam },
         Underlined = { fg = p.foam, gui = 'underline' },
 
-        LspDiagnosticsDefaultHint = { fg = p.iris },
-        LspDiagnosticsDefaultInformation = { fg = p.foam },
-        LspDiagnosticsDefaultWarning = { fg = p.gold },
-        LspDiagnosticsDefaultError = { fg = p.love },
-
-        LspDiagnosticsFloatingHint = { fg = p.iris },
-        LspDiagnosticsFloatingInformation = { fg = p.foam },
-        LspDiagnosticsFloatingWarning = { fg = p.gold },
-        LspDiagnosticsFloatingError = { fg = p.love },
-
-        LspDiagnosticsSignHint = { fg = p.iris },
-        LspDiagnosticsSignInformation = { fg = p.foam },
-        LspDiagnosticsSignWarning = { fg = p.gold },
-        LspDiagnosticsSignError = { fg = p.love },
-
-        LspDiagnosticsUnderlineHint = { gui = 'undercurl', sp = p.iris },
-        LspDiagnosticsUnderlineInformation = { gui = 'undercurl', sp = p.foam },
-        LspDiagnosticsUnderlineWarning = { gui = 'undercurl', sp = p.gold },
-        LspDiagnosticsUnderlineError = { gui = 'undercurl', sp = p.love },
-
-        LspDiagnosticsVirtualTextHint = { fg = p.iris },
-        LspDiagnosticsVirtualTextInformation = { fg = p.foam },
-        LspDiagnosticsVirtualTextWarning = { fg = p.gold },
-        LspDiagnosticsVirtualTextError = { fg = p.love },
-
-        LspReferenceText = { fg = p.rose, bg = p.highlight },
-        LspReferenceRead = { fg = p.rose, bg = p.highlight },
-        LspReferenceWrite = { fg = p.rose, bg = p.highlight },
-
         -- # Diff/diff
         DiffAdd = { fg = p.foam },
         DiffChange = { fg = p.rose },
@@ -238,6 +209,36 @@ function M.groups(p, cfg)
 
         -- graphql
         graphqlTSParameter = { fg = p.rose },
+    }
+
+    theme.lsp_diagnostic = {
+        -- # lsp
+        LspReferenceText = { fg = p.rose, bg = p.highlight },
+        LspReferenceRead = { fg = p.rose, bg = p.highlight },
+        LspReferenceWrite = { fg = p.rose, bg = p.highlight },
+
+        -- # diagnostics
+        -- new api (0.6 ownwards)
+        DiagnosticError = { fg = p.love },
+        DiagnosticWarn = { fg = p.gold },
+        DiagnosticInfo = { fg = p.foam },
+        DiagnosticHint = { fg = p.iris },
+
+        DiagnosticUnderlineError = { fg = p.love, gui = 'underline' },
+        DiagnosticUnderlineWarn = { fg = p.gold, gui = 'underline' },
+        DiagnosticUnderlineInfo = { fg = p.foam, gui = 'underline' },
+        DiagnosticUnderlineHint = { fg = p.iris, gui = 'underline' },
+
+        -- old api (0.5)
+        LspDiagnosticsDefaultHint = { fg = p.iris },
+        LspDiagnosticsDefaultInformation = { fg = p.foam },
+        LspDiagnosticsDefaultWarning = { fg = p.gold },
+        LspDiagnosticsDefaultError = { fg = p.love },
+
+        LspDiagnosticsUnderlineHint = { gui = 'undercurl', sp = p.iris },
+        LspDiagnosticsUnderlineInformation = { gui = 'undercurl', sp = p.foam },
+        LspDiagnosticsUnderlineWarning = { gui = 'undercurl', sp = p.gold },
+        LspDiagnosticsUnderlineError = { gui = 'undercurl', sp = p.love },
     }
 
     theme.plugins = {

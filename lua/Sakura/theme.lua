@@ -47,6 +47,10 @@ function S.bloom()
         u.hi(group, colors)
     end
 
+    for group, colors in pairs(theme.lsp_diagnostic) do
+        u.hi(group, colors)
+    end
+
     for group, colors in pairs(theme.plugins) do
         u.hi(group, colors)
     end
