@@ -336,14 +336,14 @@ function M.load_terminal(palette)
     vim.g.terminal_color_1 = palette.love
     vim.g.terminal_color_9 = palette.love
     -- green
-    vim.g.terminal_color_2 = palette.pine
-    vim.g.terminal_color_10 = palette.pine
+    vim.g.terminal_color_2 = palette.foam
+    vim.g.terminal_color_10 = palette.foam
     -- yellow
     vim.g.terminal_color_3 = palette.gold
     vim.g.terminal_color_11 = palette.gold
     -- blue
-    vim.g.terminal_color_4 = palette.foam
-    vim.g.terminal_color_12 = palette.foam
+    vim.g.terminal_color_4 = palette.pine
+    vim.g.terminal_color_12 = palette.pine
     -- magenta
     vim.g.terminal_color_5 = palette.iris
     vim.g.terminal_color_13 = palette.iris
