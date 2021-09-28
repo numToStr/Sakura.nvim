@@ -274,10 +274,10 @@ function M.groups(p, cfg)
 
         -- modes.nvim
         -- https://github.com/mvllow/modes.nvim
-        ModesCopy = { bg = p.gold },
-        ModesDelete = { bg = p.love },
-        ModesInsert = { bg = p.foam },
-        ModesVisual = { bg = p.iris },
+        -- ModesCopy = { bg = p.gold },
+        -- ModesDelete = { bg = p.love },
+        -- ModesInsert = { bg = p.foam },
+        -- ModesVisual = { bg = p.iris },
 
         -- nvim-tree.lua
         -- https://github.com/kyazdani42/nvim-tree.lua
