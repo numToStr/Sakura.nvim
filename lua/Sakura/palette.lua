@@ -45,8 +45,10 @@ function palette.get(variant)
 
     -- variant == 'moon'
     return {
-        base = '#141421',
-        surface = '#1f1d2e',
+        -- base = '#141421',
+        -- surface = '#1f1d2e',
+        base = '#12121e',
+        surface = '#1e1e2e',
         overlay = '#26233a',
         inactive = '#555169',
         subtle = '#6e6a86',
