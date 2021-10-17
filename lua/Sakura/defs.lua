@@ -329,6 +329,7 @@ function M.groups(p, cfg)
         IndentBlanklineChar = { fg = p.overlay },
 
         -- coc.nvim
+        -- https://github.com/neoclide/coc.nvim
         CocErrorSign = { link = 'DiagnosticError' },
         CocErrorHighlight = { link = 'DiagnosticUnderlineError' },
         CocWarningSign = { link = 'DiagnosticWarn' },
@@ -337,6 +338,14 @@ function M.groups(p, cfg)
         CocInfoHighlight = { link = 'DiagnosticUnderlineInfo' },
         CocHintSign = { link = 'DiagnosticHint' },
         CocHintHighlight = { link = 'DiagnosticUnderlineHint' },
+
+        -- nvim-cmp
+        -- https://github.com/hrsh7th/nvim-cmp
+        CmpItemKind = { fg = p.foam },
+        CmpItemAbbr = { fg = p.subtle },
+        CmpItemAbbrMatch = { fg = p.rose },
+        CmpItemAbbrMatchFuzzy = { fg = p.rose },
+        CmpItemAbbrDeprecated = { fg = p.subtle, style = 'strikethrough' },
     }
 
     return theme
