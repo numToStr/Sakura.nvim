@@ -209,6 +209,10 @@ function M.groups(p, cfg)
 
         -- graphql
         graphqlTSParameter = { fg = p.rose },
+
+        -- markdown
+        markdownTSURI = { fg = p.iris },
+        markdownTSTextReference = { fg = p.rose },
     }
 
     theme.lsp_diagnostic = {
