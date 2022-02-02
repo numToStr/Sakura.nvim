@@ -1,24 +1,25 @@
 local M = {}
 
 function M.groups(p, cfg)
-    local theme = {}
+    local background = cfg.transparent and p.none or p.base
 
-    local maybe_base = cfg.transparent and p.none or p.base
-    local maybe_italic = cfg.italics and 'italic' or nil
+    return {
+        --------------------------------
+        ------------- BASE -------------
+        --------------------------------
 
-    theme.base = {
         ColorColumn = { bg = p.highlight_overlay },
         Conceal = { bg = p.none },
-        Cursor = { gui = 'inverse' },
+        Cursor = { reverse = true },
         CursorColumn = { bg = p.highlight },
-        CursorIM = { gui = 'inverse' },
+        CursorIM = { reverse = true },
         CursorLine = { bg = p.highlight_inactive },
         CursorLineNr = { fg = p.subtle },
         DarkenedPanel = { bg = p.surface },
         DarkenedStatusline = { bg = p.surface },
         Directory = { fg = p.foam, bg = p.none },
         EndOfBuffer = { fg = p.base },
-        ErrorMsg = { fg = p.love, gui = 'bold' },
+        ErrorMsg = { fg = p.love, bold = true },
         FoldColumn = {},
         Folded = { fg = p.text, bg = p.surface },
         IncSearch = { fg = p.base, bg = p.love },
@@ -27,7 +28,7 @@ function M.groups(p, cfg)
         -- ModeMsg = {},
         MoreMsg = { fg = p.iris },
         NonText = { fg = p.inactive },
-        Normal = { fg = p.text, bg = maybe_base },
+        Normal = { fg = p.text, bg = background },
         NormalFloat = { fg = p.text, bg = p.surface },
         FloatBorder = { fg = p.subtle, bg = p.surface },
         Pmenu = { fg = p.subtle, bg = p.surface },
@@ -38,11 +39,11 @@ function M.groups(p, cfg)
         -- QuickFixLine = {},
         Search = { fg = p.base, bg = p.rose },
         SpecialKey = { fg = p.foam },
-        SpellBad = { gui = 'undercurl', sp = p.love },
-        SpellCap = { gui = 'undercurl', sp = p.subtle },
-        SpellLocal = { gui = 'undercurl', sp = p.subtle },
-        SpellRare = { gui = 'undercurl', sp = p.subtle },
-        SignColumn = { fg = p.text, bg = maybe_base },
+        SpellBad = { undercurl = true, sp = p.love },
+        SpellCap = { undercurl = true, sp = p.subtle },
+        SpellLocal = { undercurl = true, sp = p.subtle },
+        SpellRare = { undercurl = true, sp = p.subtle },
+        SignColumn = { fg = p.text, bg = background },
         StatusLine = { fg = p.text, bg = p.surface },
         StatusLineNC = { fg = p.subtle, bg = p.surface },
         TabLine = { fg = p.text, bg = p.base },
@@ -60,7 +61,7 @@ function M.groups(p, cfg)
 
         Boolean = { fg = p.gold },
         Character = { fg = p.gold },
-        Comment = { fg = p.inactive, gui = maybe_italic },
+        Comment = { fg = p.inactive, italic = cfg.italics },
         Conditional = { fg = p.pine },
         Constant = { fg = p.gold },
         Debug = { fg = p.rose },
@@ -92,7 +93,7 @@ function M.groups(p, cfg)
         Todo = { fg = p.iris },
         Type = { fg = p.foam },
         Typedef = { fg = p.foam },
-        Underlined = { fg = p.foam, gui = 'undercurl' },
+        Underlined = { fg = p.foam, undercurl = true },
 
         -- # Diff/diff
         DiffAdd = { fg = p.foam },
@@ -119,13 +120,13 @@ function M.groups(p, cfg)
         htmlH1 = { fg = p.rose },
 
         -- # markdown
-        markdownH1 = { fg = p.love, gui = 'bold' },
-        markdownH2 = { fg = p.rose, gui = 'bold' },
-        markdownH3 = { fg = p.gold, gui = 'bold' },
-        markdownH4 = { fg = p.foam, gui = 'bold' },
-        markdownH5 = { fg = p.iris, gui = 'bold' },
-        markdownH6 = { fg = p.pine, gui = 'bold' },
-        markdownHeadingDelimiter = { fg = p.subtle, gui = 'bold' },
+        markdownH1 = { fg = p.love, bold = true },
+        markdownH2 = { fg = p.rose, bold = true },
+        markdownH3 = { fg = p.gold, bold = true },
+        markdownH4 = { fg = p.foam, bold = true },
+        markdownH5 = { fg = p.iris, bold = true },
+        markdownH6 = { fg = p.pine, bold = true },
+        markdownHeadingDelimiter = { fg = p.subtle, bold = true },
         markdownLinkText = { fg = p.iris },
         markdownLinkTextDelimiter = { link = 'Comment' },
         markdownUrl = { fg = p.pine },
@@ -133,7 +134,7 @@ function M.groups(p, cfg)
         markdownLinkDelimiter = { link = 'Comment' },
         markdownCode = { fg = p.rose },
         markdownCodeDelimiter = { fg = p.foam },
-        markdownListMarker = { fg = p.love, gui = 'bold' },
+        markdownListMarker = { fg = p.love, bold = true },
         markdownOrderedListMarker = { link = 'markdownListMarker' },
 
         -- xml
@@ -141,9 +142,11 @@ function M.groups(p, cfg)
         xmlTagName = { fg = p.rose },
         xmlAttrib = { fg = p.foam },
         xmlString = { fg = p.gold },
-    }
 
-    theme.treesitter = {
+        --------------------------------------
+        ------------- TREESITTER -------------
+        --------------------------------------
+
         -- TSAnnotation = {},
         -- TSAttribute = {},
         TSBoolean = { fg = p.rose },
@@ -173,9 +176,9 @@ function M.groups(p, cfg)
         -- TSNone = {},
         -- TSNumber = {},
         TSOperator = { fg = p.pine },
-        TSParameter = { fg = p.iris, gui = maybe_italic },
+        TSParameter = { fg = p.iris, italic = cfg.italics },
         -- TSParameterReference = {},
-        TSProperty = { fg = p.iris, gui = maybe_italic },
+        TSProperty = { fg = p.iris, italic = cfg.italics },
         TSPunctBracket = { fg = p.subtle },
         TSPunctDelimiter = { fg = p.subtle },
         TSPunctSpecial = { fg = p.subtle },
@@ -193,7 +196,7 @@ function M.groups(p, cfg)
         -- TSTypeBuiltin = {},
         TSURI = { fg = p.gold },
         -- TSUnderline = {},
-        TSVariable = { fg = p.text, gui = maybe_italic },
+        TSVariable = { fg = p.text, italic = cfg.italics },
         TSVariableBuiltin = { fg = p.love },
 
         -- nvim-treesitter-refactor
@@ -213,9 +216,11 @@ function M.groups(p, cfg)
         -- markdown
         markdownTSURI = { fg = p.iris },
         markdownTSTextReference = { fg = p.rose },
-    }
 
-    theme.lsp_diagnostic = {
+        -------------------------------
+        ------------- LSP -------------
+        -------------------------------
+
         -- # lsp
         LspReferenceText = { fg = p.rose, bg = p.highlight },
         LspReferenceRead = { fg = p.rose, bg = p.highlight },
@@ -228,10 +233,10 @@ function M.groups(p, cfg)
         DiagnosticInfo = { fg = p.foam },
         DiagnosticHint = { fg = p.iris },
 
-        DiagnosticUnderlineError = { sp = p.love, gui = 'undercurl' },
-        DiagnosticUnderlineWarn = { sp = p.gold, gui = 'undercurl' },
-        DiagnosticUnderlineInfo = { sp = p.foam, gui = 'undercurl' },
-        DiagnosticUnderlineHint = { sp = p.iris, gui = 'undercurl' },
+        DiagnosticUnderlineError = { sp = p.love, undercurl = true },
+        DiagnosticUnderlineWarn = { sp = p.gold, undercurl = true },
+        DiagnosticUnderlineInfo = { sp = p.foam, undercurl = true },
+        DiagnosticUnderlineHint = { sp = p.iris, undercurl = true },
 
         -- old api (0.5)
         LspDiagnosticsDefaultHint = { fg = p.iris },
@@ -239,13 +244,15 @@ function M.groups(p, cfg)
         LspDiagnosticsDefaultWarning = { fg = p.gold },
         LspDiagnosticsDefaultError = { fg = p.love },
 
-        LspDiagnosticsUnderlineHint = { gui = 'undercurl', sp = p.iris },
-        LspDiagnosticsUnderlineInformation = { gui = 'undercurl', sp = p.foam },
-        LspDiagnosticsUnderlineWarning = { gui = 'undercurl', sp = p.gold },
-        LspDiagnosticsUnderlineError = { gui = 'undercurl', sp = p.love },
-    }
+        LspDiagnosticsUnderlineHint = { undercurl = true, sp = p.iris },
+        LspDiagnosticsUnderlineInformation = { undercurl = true, sp = p.foam },
+        LspDiagnosticsUnderlineWarning = { undercurl = true, sp = p.gold },
+        LspDiagnosticsUnderlineError = { undercurl = true, sp = p.love },
 
-    theme.plugins = {
+        -----------------------------------
+        ------------- PLUGINS -------------
+        -----------------------------------
+
         -- telescope.nvim
         -- https://github.com/nvim-telescope/telescope.nvim
         TelescopeMatching = { fg = p.rose },
@@ -349,10 +356,8 @@ function M.groups(p, cfg)
         CmpItemAbbr = { fg = p.subtle },
         CmpItemAbbrMatch = { fg = p.rose },
         CmpItemAbbrMatchFuzzy = { fg = p.rose },
-        CmpItemAbbrDeprecated = { fg = p.subtle, style = 'strikethrough' },
+        CmpItemAbbrDeprecated = { fg = p.subtle, strikethrough = true },
     }
-
-    return theme
 end
 
 function M.load_terminal(palette)

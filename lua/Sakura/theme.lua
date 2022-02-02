@@ -1,14 +1,9 @@
-local palette = require('Sakura.palette')
-local defs = require('Sakura.defs')
-local u = require('Sakura.utils')
-local o = vim.o
-
 local S = {
     -- Name of the theme
     name = 'sakura',
     config = {
         -- Variant of the theme: moon [dark] | dawn [light]
-        variant = o.background == 'dark' and 'moon' or 'dawn',
+        variant = vim.o.background == 'dark' and 'moon' or 'dawn',
         -- Transparent background
         transparent = false,
         -- Use italics
@@ -25,43 +20,32 @@ function S.setup(cfg)
 end
 
 function S.bloom()
-    vim.g.colors_name = S.name
-    o.termguicolors = true
+    local palette = require('Sakura.palette')
+    local defs = require('Sakura.defs')
 
-    local cfg = S.config
+    vim.g.colors_name = S.name
+    vim.o.termguicolors = true
 
     -- If the user sets `dawn` variant and doesn't have a light background then change it
-    if o.background ~= 'light' and cfg.variant == 'dawn' then
-        o.background = 'light'
+    if S.config.variant == 'dawn' then
+        vim.o.background = 'light'
     end
 
-    local plt = palette.get(cfg.variant)
+    local colors = palette.get(S.config.variant)
 
-    local theme = defs.groups(plt, cfg)
+    local hi_groups = defs.groups(colors, S.config)
 
-    for group, colors in pairs(theme.base) do
-        u.hi(group, colors)
+    for group, spec in pairs(hi_groups) do
+        vim.api.nvim_set_hl(0, group, spec)
     end
 
-    for group, colors in pairs(theme.treesitter) do
-        u.hi(group, colors)
-    end
+    defs.load_terminal(colors)
 
-    for group, colors in pairs(theme.lsp_diagnostic) do
-        u.hi(group, colors)
-    end
-
-    for group, colors in pairs(theme.plugins) do
-        u.hi(group, colors)
-    end
-
-    defs.load_terminal(plt)
-
-    return plt
+    return colors
 end
 
 function S.load()
-    vim.api.nvim_command('colorscheme ' .. S.name)
+    vim.api.nvim_command(('colorscheme %s'):format(S.name))
 end
 
 return S
