@@ -23,6 +23,7 @@ function M.groups(p, cfg)
         FoldColumn = {},
         Folded = { fg = p.text, bg = p.surface },
         IncSearch = { fg = p.base, bg = p.love },
+        CurSearch = { link = 'IncSearch' },
         LineNr = { fg = p.inactive },
         MatchParen = { fg = p.text, bg = p.overlay },
         -- ModeMsg = {},
