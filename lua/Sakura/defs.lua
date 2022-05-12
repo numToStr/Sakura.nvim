@@ -34,7 +34,7 @@ function M.groups(p, cfg)
         FloatBorder = { fg = p.subtle, bg = p.surface },
         Pmenu = { fg = p.subtle, bg = p.surface },
         PmenuSbar = { bg = p.overlay },
-        PmenuSel = { fg = p.text, bg = p.overlay },
+        PmenuSel = { fg = p.base, bg = p.rose },
         PmenuThumb = { bg = p.inactive },
         Question = { fg = p.gold },
         -- QuickFixLine = {},
@@ -353,11 +353,26 @@ function M.groups(p, cfg)
 
         -- nvim-cmp
         -- https://github.com/hrsh7th/nvim-cmp
+        -- NOTE: selected item is highlighted by `PmenuSel`
         CmpItemKind = { fg = p.foam },
         CmpItemAbbr = { fg = p.subtle },
         CmpItemAbbrMatch = { fg = p.rose },
         CmpItemAbbrMatchFuzzy = { fg = p.rose },
         CmpItemAbbrDeprecated = { fg = p.subtle, strikethrough = true },
+
+        CmpItemKindClass = { fg = p.gold },
+        CmpItemKindStruct = { fg = p.gold },
+
+        CmpItemKindInterface = { fg = p.foam },
+        CmpItemKindKeyword = { fg = p.foam },
+
+        CmpItemKindFunction = { fg = p.iris },
+        CmpItemKindMethod = { fg = p.iris },
+
+        CmpItemKindText = { fg = p.text },
+        CmpItemKindVariable = { fg = p.text },
+        CmpItemKindProperty = { fg = p.text },
+        CmpItemKindUnit = { fg = p.text },
     }
 end
 
