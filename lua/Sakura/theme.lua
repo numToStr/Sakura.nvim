@@ -45,7 +45,7 @@ function S.bloom()
 end
 
 function S.load()
-    vim.api.nvim_command(('colorscheme %s'):format(S.name))
+    vim.api.nvim_cmd({ cmd = 'colorscheme', args = { S.name } }, {})
 end
 
 return S
