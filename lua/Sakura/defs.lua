@@ -360,6 +360,8 @@ function M.groups(p, cfg)
         CmpItemAbbrMatchFuzzy = { fg = p.rose },
         CmpItemAbbrDeprecated = { fg = p.subtle, strikethrough = true },
 
+        CmpItemKindSnippet = { fg = p.pine },
+
         CmpItemKindClass = { fg = p.gold },
         CmpItemKindStruct = { fg = p.gold },
 
