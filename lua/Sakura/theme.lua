@@ -6,8 +6,6 @@ local S = {
         variant = vim.o.background == 'dark' and 'moon' or 'dawn',
         -- Transparent background
         transparent = false,
-        -- Use italics
-        italics = true,
     },
 }
 

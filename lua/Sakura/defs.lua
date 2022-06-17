@@ -62,7 +62,7 @@ function M.groups(p, cfg)
 
         Boolean = { fg = p.gold },
         Character = { fg = p.gold },
-        Comment = { fg = p.inactive, italic = cfg.italics },
+        Comment = { fg = p.inactive },
         Conditional = { fg = p.pine },
         Constant = { fg = p.gold },
         Debug = { fg = p.rose },
@@ -177,9 +177,9 @@ function M.groups(p, cfg)
         -- TSNone = {},
         -- TSNumber = {},
         TSOperator = { fg = p.pine },
-        TSParameter = { fg = p.iris, italic = cfg.italics },
+        TSParameter = { fg = p.iris },
         -- TSParameterReference = {},
-        TSProperty = { fg = p.iris, italic = cfg.italics },
+        TSProperty = { fg = p.iris },
         TSPunctBracket = { fg = p.subtle },
         TSPunctDelimiter = { fg = p.subtle },
         TSPunctSpecial = { fg = p.subtle },
@@ -197,7 +197,7 @@ function M.groups(p, cfg)
         -- TSTypeBuiltin = {},
         TSURI = { fg = p.gold },
         -- TSUnderline = {},
-        TSVariable = { fg = p.text, italic = cfg.italics },
+        TSVariable = { fg = p.text },
         TSVariableBuiltin = { fg = p.love },
 
         -- nvim-treesitter-refactor
