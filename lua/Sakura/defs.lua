@@ -239,17 +239,6 @@ function M.groups(p, cfg)
         DiagnosticUnderlineInfo = { sp = p.foam, undercurl = true },
         DiagnosticUnderlineHint = { sp = p.iris, undercurl = true },
 
-        -- old api (0.5)
-        LspDiagnosticsDefaultHint = { fg = p.iris },
-        LspDiagnosticsDefaultInformation = { fg = p.foam },
-        LspDiagnosticsDefaultWarning = { fg = p.gold },
-        LspDiagnosticsDefaultError = { fg = p.love },
-
-        LspDiagnosticsUnderlineHint = { undercurl = true, sp = p.iris },
-        LspDiagnosticsUnderlineInformation = { undercurl = true, sp = p.foam },
-        LspDiagnosticsUnderlineWarning = { undercurl = true, sp = p.gold },
-        LspDiagnosticsUnderlineError = { undercurl = true, sp = p.love },
-
         -----------------------------------
         ------------- PLUGINS -------------
         -----------------------------------
