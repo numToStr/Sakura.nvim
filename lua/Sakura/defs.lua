@@ -148,75 +148,75 @@ function M.groups(p, cfg)
         ------------- TREESITTER -------------
         --------------------------------------
 
-        -- TSAnnotation = {},
-        -- TSAttribute = {},
-        TSBoolean = { fg = p.rose },
-        -- TSCharacter = {},
-        TSComment = { link = 'Comment' },
-        -- TSConditional = {},
-        TSConstBuiltin = { fg = p.love },
-        -- TSConstMacro = {},
-        TSConstant = { fg = p.foam },
-        TSConstructor = { fg = p.foam },
-        -- TSEmphasis = {},
-        -- TSError = {},
-        -- TSException = {},
-        TSField = { fg = p.foam },
-        -- TSFloat = {},
-        TSFuncBuiltin = { fg = p.love },
-        -- TSFuncMacro = {},
-        TSFunction = { fg = p.rose },
-        TSInclude = { fg = p.pine },
-        TSKeyword = { fg = p.pine },
-        -- TSKeywordFunction = {},
-        TSKeywordOperator = { fg = p.pine },
-        TSLabel = { fg = p.foam },
-        -- TSLiteral = {},
-        -- TSMethod = {},
-        -- TSNamespace = {},
-        -- TSNone = {},
-        -- TSNumber = {},
-        TSOperator = { fg = p.pine },
-        TSParameter = { fg = p.iris },
-        -- TSParameterReference = {},
-        TSProperty = { fg = p.iris },
-        TSPunctBracket = { fg = p.subtle },
-        TSPunctDelimiter = { fg = p.subtle },
-        TSPunctSpecial = { fg = p.subtle },
-        -- TSRepeat = {},
-        -- TSStrike = {},
-        TSString = { fg = p.gold },
-        TSStringEscape = { fg = p.pine },
-        -- TSStringRegex = {},
-        -- TSSymbol = {},
-        TSTag = { fg = p.foam },
-        TSTagDelimiter = { fg = p.subtle },
-        TSText = { fg = p.text },
-        -- TSTitle = {},
-        -- TSType = {},
-        -- TSTypeBuiltin = {},
-        TSURI = { fg = p.gold },
-        -- TSUnderline = {},
-        TSVariable = { fg = p.text },
-        TSVariableBuiltin = { fg = p.love },
+        -- ["@annotation"] = {},
+        -- ["@attribute"] = {},
+        ['@boolean'] = { fg = p.rose },
+        -- ["@character"] = {},
+        ['@comment'] = { link = 'Comment' },
+        -- ["@conditional"] = {},
+        ['@constant.builtin'] = { fg = p.love },
+        -- ["@constant.macro"] = {},
+        ['@constant'] = { fg = p.foam },
+        ['@constructor'] = { fg = p.foam },
+        -- ["@emphasis"] = {},
+        -- ["@error"] = {},
+        -- ["@exception"] = {},
+        ['@field'] = { fg = p.foam },
+        -- ["@float"] = {},
+        ['@function.builtin'] = { fg = p.love },
+        -- ["@function.macro"] = {},
+        ['@function'] = { fg = p.rose },
+        ['@include'] = { fg = p.pine },
+        ['@keyword'] = { fg = p.pine },
+        -- ["@keyword.function"] = {},
+        ['@keyword.operator'] = { fg = p.pine },
+        ['@label'] = { fg = p.foam },
+        -- ["@literal"] = {},
+        -- ["@method"] = {},
+        -- ["@namespace"] = {},
+        -- ["@none"] = {},
+        -- ["@number"] = {},
+        ['@operator'] = { fg = p.pine },
+        ['@parameter'] = { fg = p.iris },
+        -- ["@parameter.reference"] = {},
+        ['@property'] = { fg = p.iris },
+        ['@punctuation.bracket'] = { fg = p.subtle },
+        ['@punctuation.delimiter'] = { fg = p.subtle },
+        ['@punctuation.special'] = { fg = p.subtle },
+        -- ["@repeat"] = {},
+        -- ["@strike"] = {},
+        ['@string'] = { fg = p.gold },
+        ['@string.escape'] = { fg = p.pine },
+        -- ["@string.regex"] = {},
+        -- ["@symbol"] = {},
+        ['@tag'] = { fg = p.foam },
+        ['@tag.delimiter'] = { fg = p.subtle },
+        ['@text'] = { fg = p.text },
+        -- ["@text.title"] = {},
+        ['@text.uri'] = { fg = p.gold },
+        -- ["@type"] = {},
+        -- ["@type.builtin"] = {},
+        -- ["@underline"] = {},
+        ['@variable'] = { fg = p.text },
+        ['@variable.builtin'] = { fg = p.love },
+
+        -- rust
+        ['@field.rust'] = { fg = p.rose },
+        ['@type.rust'] = { fg = p.foam },
+        ['@type.builtin.rust'] = { fg = p.love },
+        ['@function.macro.rust'] = { fg = p.rose },
+
+        -- graphql
+        ['@parameter.graphql'] = { fg = p.rose },
+
+        -- markdown
+        ['@text.uri.markdown'] = { fg = p.iris },
+        ['@text.reference.markdown'] = { fg = p.rose },
 
         -- nvim-treesitter-refactor
         TSDefinition = { bg = p.highlight_overlay },
         TSDefinitionUsage = { bg = p.highlight_overlay },
         TSCurrentScope = { bg = p.inactive },
-
-        -- rust
-        rustTSField = { fg = p.rose },
-        rustTSType = { fg = p.foam },
-        rustTSTypeBuiltin = { fg = p.love },
-        rustTSFuncMacro = { fg = p.rose },
-
-        -- graphql
-        graphqlTSParameter = { fg = p.rose },
-
-        -- markdown
-        markdownTSURI = { fg = p.iris },
-        markdownTSTextReference = { fg = p.rose },
 
         -------------------------------
         ------------- LSP -------------
@@ -228,7 +228,6 @@ function M.groups(p, cfg)
         LspReferenceWrite = { fg = p.rose, bg = p.highlight },
 
         -- # diagnostics
-        -- new api (0.6 ownwards)
         DiagnosticError = { fg = p.love },
         DiagnosticWarn = { fg = p.gold },
         DiagnosticInfo = { fg = p.foam },
@@ -239,6 +238,9 @@ function M.groups(p, cfg)
         DiagnosticUnderlineInfo = { sp = p.foam, undercurl = true },
         DiagnosticUnderlineHint = { sp = p.iris, undercurl = true },
 
+        DiagnosticDeprecated = { fg = p.subtle, strikethrough = true },
+        DiagnosticUnnecessary = { link = 'DiagnosticDeprecated' },
+
         -----------------------------------
         ------------- PLUGINS -------------
         -----------------------------------
@@ -247,22 +249,6 @@ function M.groups(p, cfg)
         -- https://github.com/nvim-telescope/telescope.nvim
         TelescopeMatching = { fg = p.rose },
         TelescopeBorder = { fg = p.subtle },
-
-        -- barbar.nvim
-        -- https://github.com/romgrk/barbar.nvim
-        BufferTabpageFill = { bg = p.none },
-        BufferCurrent = { fg = p.text, bg = p.overlay },
-        BufferCurrentIndex = { fg = p.text, bg = p.overlay },
-        BufferCurrentMod = { fg = p.foam, bg = p.overlay },
-        BufferCurrentSign = { fg = p.subtle, bg = p.overlay },
-        BufferInactive = { fg = p.subtle },
-        BufferInactiveIndex = { fg = p.subtle },
-        BufferInactiveMod = { fg = p.foam },
-        BufferInactiveSign = { fg = p.subtle },
-        BufferVisible = { fg = p.subtle },
-        BufferVisibleIndex = { fg = p.subtle },
-        BufferVisibleMod = { fg = p.foam },
-        BufferVisibleSign = { fg = p.subtle },
 
         -- gitsigns.nvim
         -- https://github.com/lewis6991/gitsigns.nvim
@@ -309,15 +295,6 @@ function M.groups(p, cfg)
         NvimTreeGitRenamed = { fg = p.pine },
         NvimTreeGitStaged = { fg = p.iris },
 
-        -- which-key.nvim
-        -- https://github.com/folke/which-key.nvim
-        WhichKey = { fg = p.iris },
-        WhichKeyGroup = { fg = p.foam },
-        WhichKeySeparator = { fg = p.subtle },
-        WhichKeyDesc = { fg = p.gold },
-        WhichKeyFloat = { bg = p.surface },
-        WhichKeyValue = { fg = p.rose },
-
         -- hop.nvim
         -- https://github.com/phaazon/hop.nvim
         HopNextKey = { fg = p.text },
@@ -329,17 +306,6 @@ function M.groups(p, cfg)
         -- https://github.com/lukas-reineke/indent-blankline.nvim
         IndentBlanklineChar = { fg = p.overlay },
 
-        -- coc.nvim
-        -- https://github.com/neoclide/coc.nvim
-        CocErrorSign = { link = 'DiagnosticError' },
-        CocErrorHighlight = { link = 'DiagnosticUnderlineError' },
-        CocWarningSign = { link = 'DiagnosticWarn' },
-        CocWarningHighlight = { link = 'DiagnosticUnderlineWarn' },
-        CocInfoSign = { link = 'DiagnosticInfo' },
-        CocInfoHighlight = { link = 'DiagnosticUnderlineInfo' },
-        CocHintSign = { link = 'DiagnosticHint' },
-        CocHintHighlight = { link = 'DiagnosticUnderlineHint' },
-
         -- nvim-cmp
         -- https://github.com/hrsh7th/nvim-cmp
         -- NOTE: selected item is highlighted by `PmenuSel`
@@ -347,7 +313,7 @@ function M.groups(p, cfg)
         CmpItemAbbr = { fg = p.subtle },
         CmpItemAbbrMatch = { fg = p.rose },
         CmpItemAbbrMatchFuzzy = { fg = p.rose },
-        CmpItemAbbrDeprecated = { fg = p.subtle, strikethrough = true },
+        CmpItemAbbrDeprecated = { link = 'DiagnosticDeprecated' },
 
         CmpItemKindSnippet = { fg = p.pine },
 
